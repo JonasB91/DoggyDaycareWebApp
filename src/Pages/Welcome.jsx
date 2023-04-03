@@ -1,5 +1,4 @@
 import React from 'react';
-import { Route, Routes } from "react-router-dom"
 
   const MyComponent = () => {
     const imageUrl = 'https://source.unsplash.com/2560x1440/?dog';

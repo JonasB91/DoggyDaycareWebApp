@@ -1,0 +1,38 @@
+.dog-container {
+  max-width: 1800px;
+}
+
+.dogImage-container {
+  margin-top: 0px;
+  display: grid;
+  grid-gap:25px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 2;
+}
+
+.dogImage-wrap {
+  flex: 1;
+  margin: 0;
+}
+
+.dogImage {
+  align-self: center;
+  width: 80%;
+  height: 90%;
+  object-fit: cover;
+  display: block;
+}
+
+.dogCard {
+  color:rgb(0, 0, 0);
+  border: 3px solid rgba(61, 163, 231, 0.021);
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+   width: 100%;
+}
+
+.background {
+  background-color: rgb(241, 147, 113);
+  object-fit: cover;
+}

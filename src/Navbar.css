@@ -1,4 +1,4 @@
-* {
+{
   box-sizing: border-box;
 }
 
@@ -46,9 +46,4 @@ body {
 
 .nav li:hover {
   background-color: #777;
-}
-
-.bg {
-  background-image: url(https://source.unsplash.com/2560x1440/?dog);
-  background-size: cover;
 }

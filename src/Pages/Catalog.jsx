@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import './Catalog.css'
+import { Link } from "react-router-dom"
 
 const apiUrl = 'https://api.jsonbin.io/v3/b/6422b9c8c0e7653a0597d126'
 
@@ -9,33 +11,40 @@ const Catalog = (props) => {
     const fetchData = async () => {
       const response = await fetch(apiUrl);
       const data = await response.json();
-      console.log('data' + data);
+      console.log(data);
       setDogs(data);
       localStorage.setItem('dogs', JSON.stringify(data.record));
     };
 
-    const cachedDogs = localStorage.getItem('dogs');
-    if (cachedDogs) {
-      console.log('Dogs are cached!')
-      setDogs(JSON.parse(cachedDogs));
+    const storedDogs = localStorage.getItem('dogs');
+    if (storedDogs) {
+      console.log('Dogs are stored')
+      setDogs(JSON.parse(storedDogs));
     } else {
-      console.log('No doggos cached, Fetching!');
+      console.log('No dogs was fetched');
       fetchData();
     }
 
   }, []);
 
   return (
-    <div>
-      <h2>Our Furry</h2>
+    <div className='background'>
+    <div className='dog-container'>
+      <div className='dogImage-container'>
       {dogs.map((dog, index) => (
-        <div key={index}>
+        <Link to={`/${dog.name}`} key={index}>
+          <div className='dogImage-wrap dogImageCard'>
           <h3>{dog.name}</h3>
-          <img src={dog.img} alt={dog.name} />
-        </div>
+          <img className='dogImage dogCard' src={dog.img} alt={dog.name} />
+          </div>
+        </Link>
       ))}
+        </div>
+      </div>
     </div>
+    
   );
 };
+
 
 export default Catalog;

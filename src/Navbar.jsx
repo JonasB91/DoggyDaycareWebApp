@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
 
-
 export default function Navbar() {
   return (
     <nav className="nav">
@@ -9,10 +8,10 @@ export default function Navbar() {
       </Link>
       <ul>
         <li>
-        <Link to="/Catalog">Katalog</Link>
+           <Link to="/catalog">Hundarna</Link>
         </li>
         <li>
-          <Link to="/info">Information</Link>
+           <Link to="/info">Om oss</Link>
         </li>
       </ul>
     </nav>

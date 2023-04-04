@@ -2,24 +2,24 @@ import Navbar from "./Navbar"
 import Welcome from "./Pages/Welcome"
 import Info from "./Pages/Info"
 import Catalog from "./Pages/Catalog"
-import { Route, Routes } from "react-router-dom"
-
+import SingleDog from "./Pages/SingleDog"
+import {Route, Routes} from "react-router-dom"
 
 
 function App() {
-  return  (
-    <>
-       <Navbar />
-        <Routes>
-          <Route path="/" element={<Welcome/>} />
-          <Route path="catalog" element={<Catalog/>} />
-          <Route path="info" element={<Info/>} />
-        </Routes>
-    </>
-  )
+    return (
+      <>
+        <Navbar />
+          <div>
+              <Routes>
+              <Route path="/" element={<Welcome />}></Route>
+              <Route path="catalog" element={<Catalog />}></Route>
+              <Route path="/info" element={<Info />}></Route>
+              <Route path="/:name" element={<SingleDog />}></Route>
+              </Routes>
+          </div>
+      </>
+    )
 }
 
-
 export default App
-
-

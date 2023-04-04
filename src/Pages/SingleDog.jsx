@@ -5,38 +5,28 @@ import { Link, useParams } from "react-router-dom"
 
 export default function SingleDog() {
   const [dog, setDog] = useState([])
-  const {name}  = useParams()
+  const {index}  = useParams()
   
   useEffect(() => {
     const fetchSingleDogData = async () => {
       try {
-        const res = await fetch(`https://api.jsonbin.io/v3/b/6422b9c8c0e7653a0597d126?q=${name}`)
+        const res = await fetch("https://api.jsonbin.io/v3/b/6422b9c8c0e7653a0597d126")
         const data = await res.json()
         setDog(data.record)
-        console.log(data)
+        console.log(data.record)
       } catch (error) {
         console.error(error)
       }
+      
     }
-    console.log(name)
+    //console.log(name)
     fetchSingleDogData()
-  }, [name])
+  }, [])
 
   return (
-    <>
-      <section>
-      {dog.map((item, index) => (
-        <div key={item.index}>
-          <article>
-          <img src={item.img} alt={item.name} />
-          </article>
-          
-
-        </div>
-        ))}
-      </section>
-    </>
-
+    <div>
+      <h2>{index}</h2>
+    </div>
 
   ) 
 }

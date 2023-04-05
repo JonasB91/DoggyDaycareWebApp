@@ -28,30 +28,24 @@ const Catalog = (props) => {
   }, []);
 
   return (
-     <div className='dogCard_container'>
-      
-     <div className='dogImage_container'>
-      
+    <div className='background'>  
+    <div className='dog-container'>
+    <div className='dogImage-container'>
      {dogs.map((dog, index) => (
-
-     <div key={index} >
-    
-      
+    <div key={index} className='dogImage-wrap dogImageCard'>
       <Link to={`/Dogs/Info/${index}`}>
-      
-      <img src={dog.img} alt={dog.name} />
-      
-     </Link>
-      
-     </div>
-      
+      <h3>{dog.name}</h3>
+      <img className='dogImage dogCard' src={dog.img} alt={dog.name} />
+      </Link>
+    </div>
+
      ))}
-      
-     </div>
-      
-      </div>
-      
+
+    </div>
+    </div>
+    </div>
      );
+
 };
 
 

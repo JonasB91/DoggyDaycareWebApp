@@ -37,7 +37,7 @@ export default function SingleDog() {
 
   return (
     <div>
-      <h2>empty</h2>
+      <h2>Loading...</h2>
       
     </div>
 

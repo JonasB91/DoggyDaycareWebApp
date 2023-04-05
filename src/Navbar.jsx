@@ -10,9 +10,6 @@ export default function Navbar() {
         <li>
            <Link to="/catalog">Hundarna</Link>
         </li>
-        <li>
-           <Link to="/info">Om oss</Link>
-        </li>
       </ul>
     </nav>
   )

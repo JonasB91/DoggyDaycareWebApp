@@ -28,14 +28,14 @@ const Catalog = (props) => {
   }, []);
 
   return (
-    <div className='background'>  
+      
     <div className='dog-container'>
     <div className='dogImage-container'>
-     {dogs.map((dog, index) => (
-    <div key={index} className='dogImage-wrap dogImageCard'>
+      {dogs.map((dog, index) => (
+      <div key={index}>
       <Link to={`/Dogs/Info/${index}`}>
-      <h3>{dog.name}</h3>
-      <img className='dogImage dogCard' src={dog.img} alt={dog.name} />
+      <h3>{dog.name} {isDogPresent(dog)}</h3>
+      <img className='dogImage dogBox' src={dog.img} alt={dog.name} />
       </Link>
     </div>
 
@@ -43,10 +43,18 @@ const Catalog = (props) => {
 
     </div>
     </div>
-    </div>
+    
      );
 
 };
 
+const isDogPresent = (prop) => {
+  let isPresent = ""
+  if (prop.present) {
+      isPresent = 'Is here!'
+  } 
+
+  return isPresent
+}
 
 export default Catalog;

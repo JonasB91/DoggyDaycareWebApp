@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react"
 import { Link, useParams } from "react-router-dom"
+import './SingleDog.css'
 
 
 
@@ -26,9 +27,27 @@ export default function SingleDog() {
   if(dog.length >0) {
 
     return (
+      <div className='background'>
       <div>
         <h2>{dog[index].name}</h2>
+        <article>
         <img src={dog[index].img} />
+        </article>
+        <li>{dog[index].age} Years Old {dog[index].sex} {dog[index].breed}</li>
+        <li>Chipnumber: {dog[index].chipNumber}</li>
+
+        <h3>
+          Owner
+        </h3>
+        <article>
+          <li>
+          {dog[index].owner.name} - {dog[index].owner.lastName}
+          </li>
+          <li>
+          Telefon Nummer: {dog[index].owner.phoneNumber}
+          </li>
+        </article>
+      </div>
       </div>
   
     ) 

@@ -15,7 +15,7 @@ function App() {
               <Route path="/" element={<Welcome />}></Route>
               <Route path="catalog" element={<Catalog />}></Route>
               <Route path="/info" element={<Info />}></Route>
-              <Route path="/:index" element={<SingleDog />}></Route>
+              <Route path="/Dogs/Info/:index" element={<SingleDog />}></Route>
               </Routes>
           </div>
       </>

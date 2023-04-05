@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom"
 
 export default function SingleDog() {
   const [dog, setDog] = useState([])
-  const {index}  = useParams()
+  const { index }  = useParams()
   
   useEffect(() => {
     const fetchSingleDogData = async () => {
@@ -23,9 +23,22 @@ export default function SingleDog() {
     fetchSingleDogData()
   }, [])
 
+  if(dog.length >0) {
+
+    return (
+      <div>
+        <h2>{dog[index].name}</h2>
+        <img src={dog[index].img} />
+      </div>
+  
+    ) 
+  }
+
+
   return (
     <div>
-      <h2>{index}</h2>
+      <h2>empty</h2>
+      
     </div>
 
   ) 

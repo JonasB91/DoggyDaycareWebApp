@@ -58,3 +58,6 @@ const isDogPresent = (prop) => {
 }
 
 export default Catalog;
+
+
+// glöm inte pusha till git

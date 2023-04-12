@@ -35,7 +35,6 @@ export default function SingleDog() {
         </article>
         <li>{dog[index].age} Years Old {dog[index].sex} {dog[index].breed}</li>
         <li>Chipnumber: {dog[index].chipNumber}</li>
-
         <h3>
           Owner
         </h3>
